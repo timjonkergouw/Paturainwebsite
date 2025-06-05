@@ -37,6 +37,28 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    // Scroll Animation Logic
+    const sections = document.querySelectorAll('.content-section');
+
+    // Create an Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                // Optional: Unobserve after animation
+                // observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2, // Trigger when 20% of the element is visible
+        rootMargin: '0px 0px -100px 0px' // Trigger slightly before the element comes into view
+    });
+
+    // Observe all sections
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 });
 
 // Memory Game Logic

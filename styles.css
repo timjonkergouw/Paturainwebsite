@@ -179,12 +179,170 @@ main {
 }
 
 .content-wrapper {
-    max-width: 800px;
+    max-width: 1100px;
     margin: 0 auto;
     background-color: var(--overlay-bg);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dual-image-section {
+    padding: 40px 0;
+}
+
+.dual-image-section .image-container {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.dual-image-section .header-image {
+    width: 85%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.dual-image-section .feature-image {
+    width: auto;
+    max-width: 45%;
+    height: auto;
+    object-fit: contain;
+}
+
+.dual-image-section .text-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.content-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin: 60px 0;
+    opacity: 0;
+}
+
+.content-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.text-block {
+    flex: 1;
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.section-image {
+    flex: 1;
+    max-width: 500px;
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.content-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.dual-image-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    line-height: 1.2;
+}
+
+.dual-image-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.dual-image-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.dual-image-section .closing-statement {
+    margin: 40px 0;
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.dual-image-section .closing-statement p {
+    font-size: 1.3rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.dual-image-section .closing-statement strong {
+    display: block;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+@media (max-width: 968px) {
+    .content-section {
+        flex-direction: column;
+        gap: 30px;
+        margin: 40px 0;
+    }
+
+    .content-section.reverse {
+        flex-direction: column;
+    }
+
+    .section-image {
+        max-width: 100%;
+    }
+
+    .text-block {
+        text-align: center;
+    }
+
+    .dual-image-section .image-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dual-image-section .feature-image {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .dual-image-section .text-content {
+        padding: 0 15px;
+    }
+
+    .dual-image-section h1 {
+        font-size: 2rem;
+    }
+
+    .dual-image-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .dual-image-section p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .content-wrapper {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .content-wrapper {
+        max-width: 95%;
+        margin: 0 auto;
+    }
 }
 
 /* Memory Game Specific Styles */
@@ -402,50 +560,6 @@ main {
 .overlay.active {
     opacity: 1;
     visibility: visible;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .memory-page {
-        padding: 0.8rem;
-    }
-
-    .memory-container {
-        padding: 1rem;
-    }
-
-    .memory-grid {
-        gap: 0.6rem;
-        padding: 0.6rem;
-    }
-
-    .memory-logo {
-        max-width: 200px;
-    }
-
-    .memory-card {
-        max-width: 100px;
-    }
-}
-
-@media (max-width: 480px) {
-    .memory-grid {
-        gap: 0.4rem;
-        padding: 0.4rem;
-    }
-
-    .memory-card {
-        max-width: 80px;
-    }
-
-    .attempts-counter {
-        font-size: 1rem;
-        padding: 0.6rem;
-    }
-
-    .attempts-counter p {
-        margin: 0.2rem 0;
-    }
 }
 
 /* Reset main margin for memory page */
@@ -717,4 +831,59 @@ main {
     .thank-you-content h2 {
         font-size: 1.5rem;
     }
+}
+
+/* Animation Styles */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.content-section.animate {
+    opacity: 1;
+    transition: opacity 0.6s ease-out;
+}
+
+.content-section.animate .text-block {
+    animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.content-section.animate .section-image {
+    animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.content-section.reverse .text-block {
+    animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.content-section.reverse .section-image {
+    animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+/* Delay for smoother appearance */
+.content-section.animate .text-block {
+    animation-delay: 0.2s;
+}
+
+.content-section.animate .section-image {
+    animation-delay: 0.4s;
 }
