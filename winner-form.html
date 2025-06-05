@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paturain Memory - Winformulier</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <img src="images/paturain naturel logo.png" alt="Paturain Logo" class="logo">
+            </a>
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="side-menu">
+        <div class="menu-items">
+            <a href="#over">Over Paturain Naturel</a>
+            <a href="#combineren">Te combineren met</a>
+            <a href="memorygame.html">Memory game winactie</a>
+        </div>
+    </nav>
+
+    <main class="winner-page">
+        <div class="winner-container">
+            <div class="memory-header">
+                <img src="images/Paturain naturel memory tekst.png" alt="Memory Game Logo" class="memory-logo">
+            </div>
+
+            <form id="winnerForm" class="winner-form">
+                <div class="form-group">
+                    <label for="code">Je code:</label>
+                    <input type="text" id="code" name="code" required readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mailadres:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="attempts">Aantal pogingen:</label>
+                    <input type="number" id="attempts" name="attempts" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Naam:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="street">Straat + huisnummer:</label>
+                    <input type="text" id="street" name="street" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="postcode">Postcode:</label>
+                    <input type="text" id="postcode" name="postcode" required pattern="[0-9]{4}\s?[A-Za-z]{2}"
+                        placeholder="1234 AB">
+                </div>
+
+                <div class="form-group">
+                    <label for="city">Plaats:</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Bericht (optioneel):</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Verstuur</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Thank You Modal -->
+    <div id="thankYouModal" class="modal thank-you-modal">
+        <div class="modal-content thank-you-content">
+            <img src="images/paturain naturel logo.png" alt="Paturain Logo" class="modal-logo">
+            <h2>Dankjewel!</h2>
+            <p>Je formulier is succesvol verzonden. We nemen contact met je op over de uitslag van de winactie.</p>
+            <button id="closeThankYou" class="modal-button">Terug naar home</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
