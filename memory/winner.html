@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paturain Memory Game - Winner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="memory.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo-link">
+                <img src="../images/paturain naturel logo.png" alt="Paturain Naturel Logo" class="logo">
+            </a>
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="side-menu">
+        <div class="menu-items">
+            <a href="../index.html#over">Over Paturain Naturel</a>
+            <a href="../index.html#combineren">Te combineren met</a>
+            <a href="memorygame.html">Memory game winactie</a>
+        </div>
+    </nav>
+
+    <main class="winner-page">
+        <div class="winner-container">
+            <div class="winner-header">
+                <img src="images/paturain naturel logo.png" alt="Paturain Logo" class="winner-logo">
+                <h1>Gefeliciteerd!</h1>
+                <p>Vul je gegevens in om kans te maken op een prijs</p>
+            </div>
+
+            <form class="winner-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="playerName">Naam</label>
+                    <input type="text" id="playerName" name="playerName" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="attempts">Aantal pogingen</label>
+                    <input type="text" id="attempts" name="attempts" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mailadres</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Telefoonnummer</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Waarom wil je graag Paturain winnen?</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Verstuur</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="../script.js"></script>
+    <script src="memory.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paturain Memory Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="memory.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo-link">
+                <img src="../images/paturain naturel logo.png" alt="Paturain Naturel Logo" class="logo">
+            </a>
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="side-menu">
+        <div class="menu-items">
+            <a href="../index.html#over">Over Paturain Naturel</a>
+            <a href="../index.html#combineren">Te combineren met</a>
+            <a href="memorygame.html">Memory game winactie</a>
+        </div>
+    </nav>
+
+    <main class="memory-page">
+        <div class="memory-container">
+            <div class="memory-header">
+                <img src="images/paturain naturel logo.png" alt="Paturain Memory Game" class="memory-logo">
+            </div>
+            <div class="attempts-counter">
+                <p>Aantal pogingen: 0</p>
+            </div>
+            <div class="memory-grid">
+                <!-- Cards will be dynamically added here -->
+            </div>
+        </div>
+
+        <div class="modal">
+            <div class="modal-content">
+                <img src="images/paturain naturel logo.png" alt="Paturain Logo" class="modal-logo">
+                <h2>Gefeliciteerd!</h2>
+                <p>Je hebt het memory spel gewonnen! Vul je naam in om kans te maken op een prijs.</p>
+                <input type="text" id="nameInput" placeholder="Jouw naam" required>
+                <button class="modal-button">Verstuur</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="../script.js"></script>
+    <script src="memory.js"></script>
+</body>
+
+</html>

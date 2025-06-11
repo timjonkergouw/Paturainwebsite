@@ -1,0 +1,345 @@
+/* Memory Game Specific Styles */
+:root {
+    --primary-white: #ffffff;
+    --text-color: #333333;
+    --overlay-bg: rgba(255, 255, 255, 0.95);
+    --menu-transition: 0.3s ease-in-out;
+    --memory-green: #226E3C;
+    --memory-hover: #45a049;
+}
+
+.memory-page {
+    padding: 1rem;
+    margin-top: 82px !important;
+}
+
+.memory-container {
+    background-image: url('images/Memory achtergrond.png');
+    background-size: cover;
+    background-position: center;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.memory-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.memory-logo {
+    max-width: 250px;
+    height: auto;
+}
+
+.attempts-counter {
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: bold;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+}
+
+.attempts-counter p {
+    margin: 0.3rem 0;
+    color: var(--memory-green);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8rem;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0.8rem;
+}
+
+.memory-card {
+    aspect-ratio: 1;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    width: 100%;
+    max-width: 120px;
+    margin: 0 auto;
+}
+
+.memory-card:hover {
+    transform: scale(1.02);
+}
+
+.memory-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+    background-color: var(--memory-green);
+}
+
+.card-back {
+    background-color: white;
+    transform: rotateY(180deg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(3px);
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-logo {
+    width: 180px;
+    margin-bottom: 1rem;
+}
+
+.modal h2 {
+    color: var(--memory-green);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.modal p {
+    margin-bottom: 1.5rem;
+}
+
+#nameInput {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 2px solid var(--memory-green);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.modal-button {
+    background-color: var(--memory-green);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.modal-button:hover {
+    background-color: var(--memory-hover);
+}
+
+/* Winner Form Styles */
+.winner-page {
+    padding: 1rem;
+    margin-top: 82px;
+}
+
+.winner-container {
+    background-image: url('images/Memory achtergrond.png');
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.winner-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.winner-logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.winner-header h1 {
+    color: var(--memory-green);
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.winner-header p {
+    color: var(--memory-green);
+    font-size: 1.1rem;
+}
+
+.winner-form {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--memory-green);
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--memory-green);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: white;
+}
+
+.form-group input:read-only {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--memory-hover);
+    box-shadow: 0 0 0 3px rgba(34, 110, 60, 0.1);
+}
+
+.submit-button {
+    background-color: var(--memory-green);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: var(--memory-hover);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .memory-page {
+        padding: 0.8rem;
+    }
+
+    .memory-container {
+        padding: 1rem;
+    }
+
+    .memory-grid {
+        gap: 0.6rem;
+        padding: 0.6rem;
+    }
+
+    .memory-logo {
+        max-width: 200px;
+    }
+
+    .memory-card {
+        max-width: 100px;
+    }
+
+    .winner-container {
+        padding: 1.5rem;
+    }
+
+    .winner-form {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .memory-grid {
+        gap: 0.4rem;
+        padding: 0.4rem;
+    }
+
+    .memory-card {
+        max-width: 80px;
+    }
+
+    .attempts-counter {
+        font-size: 1rem;
+        padding: 0.6rem;
+    }
+
+    .attempts-counter p {
+        margin: 0.2rem 0;
+    }
+
+    .winner-container {
+        padding: 1rem;
+    }
+
+    .winner-form {
+        padding: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.6rem;
+    }
+
+    .submit-button {
+        padding: 0.8rem 1.5rem;
+    }
+}
